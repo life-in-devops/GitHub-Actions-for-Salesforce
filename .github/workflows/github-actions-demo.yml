@@ -39,3 +39,13 @@ jobs:
       - name: Decrypt the server.key.enc file & store inside assets folder
         run: |
           openssl enc -nosalt -aes-256-cbc -in assets/server.key.enc -out assets/server.key -base64 -K DE3B4F6346E0CFA95CA695168A0FD8DA4D06AE808A0AFA9A4DBD2502D5DD6FE7 -iv AC767FEDCF2105140E84B62495C3F43A    
+      
+      # Authenticate Salesforce ORG
+      - name: Authenticate Salesforce ORG
+        run: |
+          sfdx force:auth:jwt:grant --client-id H3MVG94Jqh209Cp4SVZwceuInDlgNQSHhu2dqvostdRCel97CDWmEIYOAlXDdXWzxhQq7cdUxBGp6vpySnUWad --jwt-key-file assets/server.key --username narasimha.jetty@thinqloud.com --instance-url https://login.salesforce.com/ --setdefaultorgusername -a PocOrg
+      
+      # Validating Source code salesforce ORG
+      - name: Validate Source Code Against Salesforce ORG
+        run: |
+          sfdx force:source:deploy -p force-app -c -u PocOrg
