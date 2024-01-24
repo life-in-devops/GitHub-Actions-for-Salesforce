@@ -1,13 +1,6 @@
 name: Production Pipeline
 run-name: ${{ github.actor }} is running pipeline on ${{ github.repository }}
-on: 
-  push:
-    branches:
-      - master
-      - main
-    paths:
-      - 'force-app/**'
-      
+on: [push]     
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
