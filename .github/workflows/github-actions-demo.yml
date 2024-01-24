@@ -1,8 +1,7 @@
 name: Production Pipeline
 run-name: ${{ github.actor }} is running pipeline on ${{ github.repository }}
 on: 
-  pull_request:
-    types: [closed]
+  push:
     branches:
       - master
       - main
