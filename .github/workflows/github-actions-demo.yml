@@ -48,4 +48,4 @@ jobs:
       # Validating Source code salesforce ORG
       - name: Validate Source Code Against Salesforce ORG
         run: |
-          sfdx force:source:deploy -p force-app
+          sfdx force:source:deploy -p force-app -u testuser
