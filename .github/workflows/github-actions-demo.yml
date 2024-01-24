@@ -43,7 +43,7 @@ jobs:
       # Authenticate Salesforce ORG
       - name: Authenticate Salesforce ORG
         run: |
-          sfdx force:auth:jwt:grant --client-id 3MVG94Jqh209Cp4SVZwceuInDlgNQSHhu2dqvostdRCel97CDWmEIYOAlXDdXWzxhQq7cdUxBGp6vpySnUWad --jwt-key-file assets/server.key --target-username narasimha.jetty@thinqloud.com --target-org https://login.salesforce.com/
+          sfdx force:auth:jwt:grant --client-id 3MVG94Jqh209Cp4SVZwceuInDlgNQSHhu2dqvostdRCel97CDWmEIYOAlXDdXWzxhQq7cdUxBGp6vpySnUWad --jwt-key-file assets/server.key --username narasimha.jetty@thinqloud.com --instance-url https://login.salesforce.com
       
       # Validating Source code salesforce ORG
       - name: Validate Source Code Against Salesforce ORG
